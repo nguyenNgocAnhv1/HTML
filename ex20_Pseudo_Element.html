@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo element</title>
+    <style>
+        .box{
+            width: 100vw;
+            height: 25vh;
+            background-color: aquamarine;
+        }
+        .box::before{
+            content: "";
+            display: block;
+            width: 25vw;
+            height: 10vh;
+            background-color: slateblue;
+        }
+        .box::after{
+            content: "";
+            display: block;
+            width: 25vw;
+            height: 10vh;
+            background-color: rgb(237, 144, 4);
+        }
+        .c::first-line{
+            background: rgb(255, 4, 4);
+        }
+        .d::first-letter{
+            background-color: blue;
+        }
+        .e::selection{
+            font-size:35px;
+        }
+        h1::selection{
+            background-color: darkkhaki;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <h1>Selection</h1>
+    <ul>
+        <li class="a">Before </li>
+        <li class="b">After</li>
+        <li class="c">First line<br>Line 2</li>
+        <li class="d">First letter</li>
+        <li class="e">Selection</li>
+    </ul>
+</body>
+</html>

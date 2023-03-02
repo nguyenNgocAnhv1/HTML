@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Animation</title>
+    <style>
+        @keyframes grow {
+            from {
+                opacity: 0;                 
+                /* transparent */
+                height: 0
+                /* size */
+                
+            }
+
+            to {
+                opacity: 1;
+                height: var(--he);
+            }
+        }
+
+        .d1 {
+            width: 75vw;
+            height: 75vh;
+            margin: 12vh 12vw;
+            background-color: antiquewhite;
+            display: flex;
+            justify-content: space-evenly;
+            color: rgb(240, 240, 240);
+            /* align-items: flex-end; */
+        }
+
+        .d2 {
+            align-self: flex-end;
+            height: var(--he);
+            width: 10%;
+            background-color: rgb(31, 20, 7);
+            animation: grow linear 3s;
+            /* call animation */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d1">
+        <div class="d2" style="--he: 25%">25%</div>
+        <div class="d2" style="--he: 45%">45% </div>
+        <div class="d2 " style="--he: 75%">75%</div>
+    </div>
+</body>
+
+</html>

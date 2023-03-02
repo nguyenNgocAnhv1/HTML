@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--
+      This is the page head - it contains info the browser uses to display the page
+      You won't see what's in the head in the page
+      Scroll down to the body element for the page content
+    -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <!-- 
+      This is an HTML comment
+      You can write text in a comment and the content won't be visible in the page
+    -->
+
+    <title>NgocAnh</title>
+     <style>
+        
+        .highlight {font-size:35px; /*cở chữ*/
+        font-family:Times; /*font chữ ví dụ times, arial...*/
+        font-weight:bold; /*in đậm, nếu bạn không muốn in đậm text bạn có thể xóa dòng này*/
+        }
+        </style>
+        <script>
+        var text="Ngọc Anh CNTT 1504"
+        var speed=80 //tốc độ chuyển đổi giữa các màu
+        if (document.all||document.getElementById){
+        document.write('<span id="highlight" class="highlight">' + text + '</span>')
+        var storetext=document.getElementById? document.getElementById("highlight") : document.all.highlight
+        }
+        else
+        document.write(text)
+        var hex=new Array("00","14","28","3C","50","64","78","8C","A0","B4","C8","DC","F0")
+        var r=1
+        var g=1
+        var b=1
+        var seq=1
+        function changetext(){
+        rainbow="#"+hex[r]+hex[g]+hex[b]
+        storetext.style.color=rainbow
+        }
+        function change(){
+        if (seq==6){
+        b--
+        if (b==0)
+        seq=1
+        }
+        if (seq==5){
+        r++
+        if (r==12)
+        seq=6
+        }
+        if (seq==4){
+        g--
+        if (g==0)
+        seq=5
+        }
+        if (seq==3){
+        b++
+        if (b==12)
+        seq=4
+        }
+        if (seq==2){
+        r--
+        if (r==0)
+        seq=3
+        }
+        if (seq==1){
+        g++
+        if (g==12)
+        seq=2
+        }
+        changetext()
+        }
+        function starteffect(){
+        if (document.all||document.getElementById)
+        flash=setInterval("change()",speed)
+        }
+        starteffect()
+        </script>
+
+
+  </head>
+      <style>
+body {
+  background-image: url('https://img2.goodfon.com/wallpaper/nbig/1/55/robot-belyy-shlem-belyy-fon.jpg');
+}
+</style>
+  <body>
+    
+    <div>Nhận dạng sách</div>
+<button type="button" onclick="init()">Bắt đầu</button>
+<div id="webcam-container"></div>
+<div id="label-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=IETNjCwq"></script>
+<script type="text/javascript">
+    // More API functions here:
+    // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+    // the link to your model provided by Teachable Machine export panel
+    const URL = "https://teachablemachine.withgoogle.com/models/-K-hS1f6C/";
+
+    let model, webcam, labelContainer, maxPredictions;
+  let lastLabel = "";
+
+    // Load the image model and setup the webcam
+    async function init() {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+
+        // load the model and metadata
+        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+        // or files from your local hard drive
+        // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+
+        // Convenience function to setup a webcam
+        const flip = true; // whether to flip the webcam
+        webcam = new tmImage.Webcam(200, 200, circle); // width, height, flip
+        await webcam.setup(); // request access to the webcam
+        await webcam.play();
+        window.requestAnimationFrame(loop);
+
+        // append elements to the DOM
+        document.getElementById("webcam-container").appendChild(webcam.canvas);
+        labelContainer = document.getElementById("label-container");
+
+    }
+
+    async function loop() {
+        webcam.update(); // update the webcam frame
+        await predict();
+        window.requestAnimationFrame(loop);
+    }
+
+    // run the webcam image through the image model
+    async function predict() {
+        // predict can take in an image, video or canvas html element
+        const predictions = await model.predictTopK(webcam.canvas,1);
+        const label = predictions[0].className;
+        if (label != lastLabel) {
+          lastLabel = label;
+          responsiveVoice.speak(label,"Vietnamese Female");
+          labelContainer.innerText = predictions[0].className;
+          
+        }
+
+    }
+</script>
+
+  </body>
+</html>

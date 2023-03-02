@@ -1,0 +1,122 @@
+/* Mobile - tablet */
+@media (max-width: 1023px) {
+    .hide-on-moble-tablet {
+        display: none;
+    }
+    .header__sort-bar{
+        display: flex;
+    }
+    .header {
+        height: 72px;
+        position: fixed;
+        top:0;
+        width: 100%;
+        z-index: 10;
+    }
+    .app__container{
+        margin-top: calc(72px + 46px);
+        padding: 0 12px;
+    }
+
+    .header__cart-list {
+        padding-right: calc(var(--bs-gutter-x) * 1.5);
+        padding-left: calc(var(--bs-gutter-x) * 1.5);
+        margin-right: auto;
+        margin-left: auto;
+        position: fixed;
+        top: 72px;
+        width: 100%;
+        right: 0;
+    }
+
+    .header__cart-list::after {
+        display: none;
+        width: 20px ;
+        height: 20px;
+    }
+    .header__logo{
+        width: unset;
+    }
+    .header__cart {
+        width: unset;
+        padding: 0 12px;
+    }
+    .header__mobile-search-icon{
+        display: block;
+    }
+    .header__search {
+        
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 12;
+        padding: 0 16px;
+        height: 46px;
+        top: 72px;
+        box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        animation:  mobileSearchSideIn linear 0.3s;
+        display: none;
+    }
+    .header__search-history{
+        position: fixed;
+        width: 100%;
+        top:120px;
+    }
+    .app__content{
+        padding-top: 20px;
+    }
+    @keyframes mobileSearchSideIn{
+        from{
+            opacity: 0;
+            top: 35px;
+        }to{
+            opacity: 1;
+            top: 72px;
+        }
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hide-on-tablet {
+        display: none;
+    }
+
+    
+}
+
+/* Mobile */
+@media (max-width:767px) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .shopee-svg-icon{
+        width: 120px;
+    }
+    .mobile-category{
+        display: block;
+    
+    }
+    .pagination-item{
+        margin: 0;
+    }
+    .footer__download {
+        justify-content: center;
+        align-items: center;
+    }
+    .footer__heading,.footer__item-link{
+        text-align: center;
+    }
+    .footer__item-link{
+        justify-content: center;
+    }
+    .footer__download-apps{
+        flex: unset;
+        display: flex;
+        flex-direction: column;
+    }
+    .footer__download-apps img{
+        width: 100px;
+        /* object-fit: contain; */
+    }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ex4_grid.css">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .container {
+            /* background-color: aqua; */
+            /* height: 100px; */
+        }
+
+        h1 {
+            color: aliceblue;
+            line-height: 260px;
+            text-align: center;
+            margin: 0;
+        }
+
+        .course-item {
+            background-color: orange;
+            height: 260px;
+        }
+
+        @media (max-width:1023px) and (min-width: 740px) {
+            .course-item {
+                margin-top: 16px;
+            }
+        }
+
+        @media (max-width:739px) {
+            .course-item {
+                margin-top: 8px;
+            }
+        }
+        .category{
+            background-color: goldenrod;
+            margin: 0;
+            height: 260px;
+        }
+        .row{
+            background-color: rgb(235, 235, 27);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid wide container">
+        <div class="row">
+            <div class="col l-3 m-0 c-0">
+                    <ul class="category">
+                        <li>JavaSc</li>
+                        <li>Pho</li>
+                        <li>Bun</li>
+                    </ul>
+            </div>
+            <div class="col l-9 m-12 c-12">
+                <div class="row">
+                    <div class="col l-4 m-6 c-12">
+                        <div class="course-item">
+                            <h1>
+                                Period 1
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="col l-4 m-6 c-12">
+                        <div class="course-item">
+                            <h1>
+                                Period 1
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="col l-4 m-6 c-12">
+                        <div class="course-item">
+                            <h1>
+                                Period 1
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+:root{
+    --white-color:#fff;
+    --black-color:#000;
+    --text-color:rgb(89, 88, 88);
+    --border-color:#dbdbdb;
+    --navbar-height:38px;
+}
+*{
+    box-sizing: border-box;
+    
+}
+html{
+    /* tip for set font size = 10px */
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    /* font-family: 'Roboto', sans-serif; */
+    /* font-family: 'Roboto Thin', sans-serif;
+    font-family: 'Roboto Light', sans-serif;
+    font-family: 'Roboto Medium', sans-serif;
+    font-family: 'Roboto Black', sans-serif; */
+    box-sizing: border-box; 
+
+}
+/* Responsive  */
+.grid{ 
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+
+}
+.grid__full-width{
+    width: 100%;
+}
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+/* test */
+.grid__column-2{
+    /* display: flex; */
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+
+}
+.grid__column-2-4{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+.grid__column-10{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3334%;
+}
+@keyframes sideIn{
+    from{
+        opacity: 0;
+        
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes slideTop{
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes growth{
+    from{
+        transform: scale(var(--growth-from));
+    }
+    to{ 
+        transform: scale(var(--growth-to));
+    }
+}
+/* button style */
+.btn{
+    min-width: 100px;
+    min-height: 30px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin: 10px;
+}
+.btn:hover{
+    opacity: 0.7;
+}
+/* Selection */
+.select-input{
+    position: relative;
+    padding: 0 12px;
+    height: 34px;
+    border-radius: 2px;
+    background-color: white;
+    min-width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+
+}
+.select-input:hover  .select-input__list{
+    display: flex;
+}
+.select-input__list{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 22px;
+    border-radius: 2px;
+    background-color: white;
+    list-style: none;
+    padding:0px 16px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    text-align: left;
+    display: none;
+    z-index: 1;
+}
+
+.select-input__item{
+
+}
+.select-input__link{
+    display: block;
+    padding:0px 0px;
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+.select-input__link:hover{
+    color: red;
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.4rem;
+    list-style: none;
+    color: var(--white-color);
+
+}
+.pagination-item{
+    margin: 10px 8px;
+
+}
+.pagination-item__link{
+    text-decoration: none;
+    min-width: 40px;
+    height: 30px;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 2px;
+    color: var(--text-color);
+
+}
+.pagination-item__icon{
+
+}
+.pagination-item__link-active{
+    background-color: red;
+    color: white;
+}
+.pagination-item__link-active:hover{
+    background-color: red;
+    filter: brightness(80%);
+}
+/* Footer */

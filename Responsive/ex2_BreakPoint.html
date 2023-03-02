@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break Point</title>
+    <style>
+        *{
+            /* width: 100vw;
+            height: 100vh; */
+        }
+        body{
+            background-color: tomato;
+            height: 100vh;
+            display: flex;
+        }
+        h1{
+            color: aliceblue;
+        }
+        .mobile,
+        .tablet,
+        .pc{
+            display: none;
+            margin: auto;
+            font-size: 100px;
+        }
+        /* Mobile: width < 740px */
+        @media screen and (max-width:46.1875em) {
+            .mobile{
+                display: block;
+            }
+        }
+        /* Tablet */
+        @media screen and (min-width:46.25em) and (max-width: 63.9375em){
+            .tablet{
+                display: block;
+            }
+        }
+        /* Px */
+        @media screen and (min-width: 64em){
+            .pc{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="mobile">Mobile</h1>
+    <h1 class="tablet">Tablet</h2>
+    <h1 class="pc">PC</h3>
+</body>
+</html>

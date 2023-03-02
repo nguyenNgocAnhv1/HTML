@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Functions</title>
+    <style>
+        .box{
+            width: calc(50% + 25%);
+            height: 100vh;
+            background-color: teal; 
+
+
+        }
+        .a::after{
+            content: "("attr(href)")";
+        }
+        .box::after{
+            content: "VIP";
+            content: attr(title);
+        }
+    </style>
+</head>
+<body>
+    <div class="box" title="Box sieeu deo"></div>
+    <a href="https://9nice.site/question/ram-dual-channel-la-gi/" class="a">Hello</a>
+</body>
+</html>

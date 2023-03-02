@@ -1,0 +1,299 @@
+@keyframes sideTop{
+    from{
+        transform: translateX(100px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+}
+@keyframes opa{
+    form{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes sideIn{
+    from{
+        opacity: 0;
+        
+    }
+    to{
+        opacity: 1;
+    }
+}
+.header{
+    background-color: antiquewhite;
+    /* height: 140px; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.header__first{
+    width: 100%;
+    background-color: #111;
+    height: 28px;
+    position: relative;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.header__first__ul{
+    margin-left: 200px;
+}
+.header__first__ul ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    text-align: center;
+}
+.header__first__ul ul li{
+    color: white;
+    padding: 6px;
+    font-size: 12px;
+    list-style: none;
+    text-align: center;
+}
+.header__first__ul ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.header__first__ul ul li i{
+    color: rgb(209, 57, 57);
+}
+.header__first__search{
+    margin-right: 200px;
+}
+.header__first__search input{
+    background-color: #111;
+    border: none;
+    color: white;
+}
+.header__first__search div{
+    border: 1px solid #222;
+}
+.header__first__search i{
+    color: rgb(196, 193, 193);
+    font-size: 12px;
+}
+.header__first__search input:focus{
+    outline: none;
+}
+.header__second{
+    height: 76px;
+    width: 100%;
+    background-color: #f0a52b;
+    display: flex;
+    align-items: center;
+}
+.header__second__logo{
+    width: 200px;
+    height: 60px;
+    text-decoration: none;
+    background: url(https://kenh14cdn.com/web_images/k14_logo2022.svg) no-repeat !important;
+    background-size: auto 60px !important;
+    margin-left: 200px;
+    margin-top: 10px;
+}
+.header__second i{
+    font-size: 30px;
+    color: white;
+}
+.header__second__button{
+    border-radius: 50px;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 139, 0);
+    color: white;
+    padding: 8px 10px;
+    font-weight: 520;
+}
+.header__second_trend1{
+    margin: 0 20px;
+}
+.header__third{
+    height: 40px;
+    width: 100%;
+    background-color:#a70e1a;
+    display: flex;
+    align-items: center;
+}
+.header__third div{
+    height: 100%;
+    margin-left: 200px;
+    width: 100%;
+}
+.header__third div ul{
+    /* width: 100%; */
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    height: 100%;
+    /* padding-right: 200px; */
+}
+.header__third div ul li{
+    padding: 0 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.header__third div ul li:hover{
+    background-color: #900e19;
+}
+
+.header__third div ul a{
+    line-height: 100%;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 1px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.header__second-menu-mobile{
+    display: none;
+    position: fixed;
+    right: 50px;
+}
+.menu-right{
+    width: 100%;
+}
+
+.nav__overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    animation: sideIn ease-in-out 0.2s;
+    display: none;
+}
+@media screen and (max-width: 63.9375em){
+    .header__first__ul{
+        margin-left: 50px;
+    }
+    .header__first__search{
+        margin-right: 50px;
+    }
+    .header__second__logo{
+        margin-left: 50px;
+    }
+    .header__third div{
+        margin-left: 50px;
+
+    }
+    .header__second i{
+        display: none;
+    }
+    .header__third div ul li:nth-child(n+10){
+        display: none;
+    }
+    .header__third div ul li:last-child{
+        display: flex;
+    }
+    .header__second .header__second-menu-mobile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header__second .header__second-menu-mobile i{
+        display: block;
+    }
+    .header__second{
+        /* justify-content: space-evenly; */
+        
+    }
+    .header__second_trend1{
+        margin-left: 0;
+    }
+    .header__second_trend2{
+        display: none;
+        margin: 0 20px;
+    }
+    .menu-right-ul{
+        display: flex;
+        list-style: none;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        align-items: center;
+        text-decoration: none;
+        background-color: #a70e1a;
+        justify-content: center;
+        margin-left: 300px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 320px;
+        height: 100%;
+        transform: translateX(320px);
+        opacity: 0;
+        transition: all linear 0.2s;
+    }
+    #nav-mobile-input:checked ~ .menu-right-ul{
+        opacity: 1;
+        display: flex;
+        transform: translateX(0px);
+
+    }
+    #nav-mobile-input:checked ~ .nav__overlay{
+        display: block;
+    }
+
+    .menu-right-li{
+        /* padding: 0 10px; */
+        margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+
+    
+    }
+    .menu-right-li a{
+        text-decoration: none;
+        color: white;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        display: block;
+        height: 40px;
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu-right-li a:hover{
+        background-color: #900e19;
+    }
+   .header__third{
+    display: none;
+   }
+
+}
+@media screen and (max-width:46.1875em) {
+    .header__first{
+        display: none;
+    }
+    .header__second_trend1{
+        margin-left: 0;
+    }
+    .header__second_trend2{
+        display: none;
+        margin: 0 20px;
+    }
+    .header__second_trend1{
+        display: none;
+    }
+
+}
+/* Tablet */
+@media screen and (min-width:46.25em) and (max-width: 63.9375em){
+    
+}

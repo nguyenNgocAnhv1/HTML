@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button</title>
+    <style>
+        body{
+           height: 100vh;
+           display: flex;
+           flex-direction: column; 
+           justify-content: center;
+           align-items: center;
+        }
+        .d1 {
+            /* width: 100vw;
+            height: 30vh;
+            display: flex;
+            justify-content: center;
+            align-items: center; */
+            margin: 10vh;
+
+        }
+
+        .btn {
+            border: none;
+            background-color: transparent;
+            min-width: 150px;
+            padding: 12px 48px;
+            margin: 12px;
+            border-radius: 50px;
+            cursor:pointer;
+            transition: opacity 0.2s ease-in;
+        }
+
+        .btn--success {
+            background-color:#53BF9D ;
+        }
+
+        .btn--wrong {
+            background-color: #FFC54D ;
+            cursor: progress;
+        }
+
+        .btn--failure {
+            background-color: #F94C66 ;
+            cursor: no-drop;
+        }
+        .btn+.btn{
+            margin-left: 50px;
+        }
+        .btn:hover{
+            opacity:0.8;
+        }
+        .btn--disabled{
+            opacity: 0.5 !important;
+            cursor: default;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="d1">
+        <button class="btn btn--success btn--disabled">Success</button>
+        <button class="btn btn--wrong ">Wrong</button>
+        <button class="btn btn--failure">Failure</button>
+    </div>
+    <div class="d1">
+        <button class="btn btn--success btn--disabled">Success</button>
+        <button class="btn btn--wrong  ">Wrong</button>
+        <button class="btn btn--failure btn--disabled">Failure</button>
+    </div>
+    <div class="d1">
+        <button class="btn btn--success btn--disabled">Success</button>
+        <button class="btn btn--wrong ">Wrong</button>
+        <button class="btn btn--failure">Failure</button>
+    </div>  
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+            margin: auto;
+            text-align: center;
+            color: aliceblue;
+            font-size: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: 3s linear  infinite alternate both running slidein;
+            /* animation: 0.5s linear 1s infinite alternate slidein; */
+            /* animation: 3s linear 1s infinite running slidein;    */
+            /* transition: 4s all; */
+            position: relative;
+            top: 50px;
+            left: 50px;
+            
+            
+        }
+        @keyframes slidein{
+            to{
+                top:0;
+                /* opacity: 10%; */
+                transform: rotate(180deg);
+                
+            }from{
+                left: 0;
+                /* transform: rotateX(0deg);     */
+                transform: rotate(0deg);
+                /* opacity: 100%; */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Animation</h1>
+    </div>
+</body>
+</html>
